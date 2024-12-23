@@ -1,0 +1,184 @@
+
+
+===>  1-bo'lim				INHERTANCE - "Meros olish"
+
+	
+	Inhertance bu - biron bir umumiy ma'noga ega bolgan classdan boshqa aynan oziga 
+tegishli ma'nolarga ega bolgan classlar meros olishiga etilinadi. Bularga misol qilib 
+hayvon degan class yaratilinsa bu umumiy ma'noda hamma hayvonlarga tegishli jihatlarni 
+oz ichiga oladi, va boshqa alohida dog, cat, tiger classlari esa osha hayvon degan classdan 
+meros ololidi, cunki bular aynan oziga tegishli ma'noga ega class hisoblanadi va hayvon degan
+classning prop laridan foydalana oladi. Qulayligi hayvon clasinida ocilgan prop larni alohida
+yana meros olishi mumkin bolgan classlarda ocilavermaydi.
+
+
+ 	Meros olishning usuli: Biron bir meros oladigan classning nomini yoniga ikki nuqa 
+qoyib undan song moros olinadigan classning nomi qoyib yakunlanadi.
+
+	public class Dog : Animal          <- Huddi shu korinishda boladi. 
+	{
+	     prop
+	}
+
+_________________________________________________________________________________________________________________
+
+
+
+===>  2-bo'lim				PROTECTED - Access modifier
+
+	Protected bu - public va privatega oxshagan access modifier hisoblanadi, va bu asosan 
+inhert qlinvotganda ishlatilidani, chunki qaconki biron bir classdan boshqa classlar protected 
+access modifieri bilan inhert qlinayotganda, bu faqat shu inhertance classlari ichida ishlaydi, 
+inhertance ga ummuman aloqasi yoq classlarda ishlamaydi. Protected access modifieri bilan bironta
+prop ocadigan bolsak, misol Name degan, biz buni ishlatishimiz uchun bunga alohida funksiya (method)
+yaratishimiz kerak, protectedda Name degan prop yaratilinadi va buni fronted qismida ishlatishimiz 
+uchun:  
+		public void Setname(string name)
+		{
+		     propning Name ga = stringda kirib kelayotgan name yuklanadi;
+		}
+
+Frontend qismida esa odatdagidek objectni nomini chaqirib yoniga nuqta qoyib propning Name sini ishlata 
+olmaymiz, endi biz objectning nomini yozib nuqta qoyib SetName degan funksiyamizni chaqirib iciga 
+qoymoqchi bo'lgan nomimizni qoyib ishlatamiz.
+
+
+
+_________________________________________________________________________________________________________________
+
+
+				
+
+===>  3-bo'lim				INHERTANCE TYPES
+
+	Ihertance conclude three types of it: 
+
+	1st: Single Inheritance
+	2nd: Hierarchical Inheritance
+	3rd: Multilevel Inheritance
+
+
+_________________________________________________________________________________________________________________
+
+
+
+
+===>  4-bo'lim			VIRTUAL METHODS AND METHODS OVERRIDING
+
+	Bu bo'lim qachonki biz ota classda ham bola classda ham bir hil name bilan funksiya ochilgandayu lekn 
+osha funksiyalarning nomi bir xilligiga qaramasdan har bir methodda bajaradigan vazifasi XAR-HIL ya'ni bir hil
+nomdagi funksiyani boshqa bola classda boshqa vazifa bilan ishlatmoqchi bo'lganimizdagina ishlata olamiz.
+Bunda biz buni ishlatishimiz uchun ota classga yoki meros olinadigan classga funksiya VIRTUAL kalit sozi bilan 
+ochiladi va shu classni yana qayerda ishlatmoqchi bolsak osha yerga huddi shu korinishda OVERRIDING kalit sozi 
+bilan bir hil nom osstida funksiya ochiladi. Va OVERRIDING deb ochilgan funksiyaning vazifasini bemalol ozgartira 
+olamiz 
+
+	Ota class:  
+			public virtual void Do()
+			{
+			     Console.WriteLine("Boshlangich ochilgan qismi");
+			}
+
+
+	Bola class
+			public overriding void Do()
+			{
+			     Console.WriteLine("Ozgartirib ochilishi mumkin bolgan qismi");
+			}
+
+
+
+_________________________________________________________________________________________________________________
+
+
+
+
+			
+===>  5-bo'lim			INHERTANCE larni ishlatish mumkin bolmagan holatlar
+
+	Qachonki Kevotgan ma'lumot is-a ya'ni "bu" qo'shimchasining tarifiga ega bolgandagina ishlatilinadi, has-a ya'ni 
+kevotgan malumotni qachondir bolganligi va uni tariflashga ishlatilinvotgan holatlarda inhertance qlinishi mumkin emas.
+
+
+
+_________________________________________________________________________________________________________________
+
+
+
+
+
+===>  6-bo'lim			SEALED CLASSES
+
+	Sealed classlardan object olish mumkin lekn meros olib bolmaydi. Biz agar qaysidir classni sealed qiladigan bolsak 
+biz undan meros ololmaymiz, lekn agar bola class sealed bolsa bola class ota classdan meros ololidi lekn bola classdan 
+nevara class meros ololmaydi. Classlarni seal qilish quidagi korinishda amalga oshiriladi.
+
+	public sealed class Dog : Animal
+	{
+	     Console.WriteLine("Bu classdan meros olib bolmaydi");
+	} 
+
+
+______________________________________________________________________________________________________________________________
+
+
+
+
+===>  7-bo'lim			INHERITANCEDA CONSTRUCTORNING ISHLASHI
+
+	Inheritance da constructorning ishlashida ota classda ctor qandaydir argument qabul qilsa bola class exception otadi,
+ya'ni bola class ishlamidi. Chunki Ota classdagi string qabul qilishini soravotgan ctorga string tipida ma'ulot taminlab 
+beradigan manbai mavjud emas, qo'pol qb etgan da yoq joydan argument qabul qlurmidi. ctor ishlashi uchun ota classdan xech 
+qanday argument qabul qilmaydigan ctor ochish kerak, yoki qandaydir tipda argument qabul qiladigan ctor ota classda ochiladigan 
+bolsa demakki bola classda ham ctor ochiladi lekn uning yoniga " : base (ota classdagi argumentga qiymat)" korinishida ochiladi, 
+ya'ni quidagi 2 chi usulda. Bular quidagi korinishda boladi:
+
+
+1 chi usul:
+		Faqat ota classda ctor ochilsa bola classdagi objectlarni ham olsak boladigan usuli:
+
+			public Vehicle()
+			{
+			     objectningNomini = jonlantirish;
+			}
+
+
+2 chi usuli:
+		Ota classda ochilishi:
+
+			public Vehicle(string name)
+			{
+			     objectningNomini = jonlantirish;
+			}
+
+		Bola classda ochilishi:
+
+			public Vehicle(string name) : base("ota ctordagi argumentga qiymat");
+			{
+			     objectningNomini = jonlantirish;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+			
+	
+
+
+	
+
+
+
+
+
+
+
+	

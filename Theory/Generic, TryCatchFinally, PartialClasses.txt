@@ -1,0 +1,55 @@
+
+
+					GENERIC = <T>
+
+
+	Generic bu => Funksiya va methodlarni yonida, qiymat qabul qiladigan lyubboy joyda iwlatsa boladi 
+ishlatsak boladi, Bu generic iwlatganimizda com runTime vaqtida wu ozgaruvci typeni ozi aniqlab oladi, yani 
+int, float, string kabi ozgaruvcilar ucun alohida func yoki methodlar yaratib otirilmaydi, yani bz shu generic 
+yordamida biz qaysi type ni iwlatmoqchi bolsak, owani ozi aftomatik tarzda aniqlaydi va kodni qaytadan shu 
+ozgaruvchi uchun yozadi.
+.
+
+
+
+					TRY / CATCH / FINALLY
+
+	Biz "try" ni "catch" bn yoki "finally" bn yoki ikklasi bn ham iwlatiwimiz mumkn. 
+Biz biron bir kod yozganimizda va qaysidir kodimizning warti annqi extemption otiwi mumkn boliwi mumkin bogan 
+holatning qismi yoziladi va agar owa extemption otilsa catch ning iciga wart yoziladi, finallyning icida esa 
+extemption otsa ham otmasa ham iwlayveradi.
+
+
+
+
+					PARTIAL CLASSES
+
+	O'zi ummuman tavsiya qlinavermaydi partial classlar, koddi murakkab qvoradi azgina, debug qliwni qiyin 
+qbqoyadi dasturimizni, lekin iwlatilinadigan 1 ta 2 ta holatlar kebqoliwi mumkin. Ozi ummuman partial class degani
+bitta classni qaytadan yana ociw desak ham boladi. Ociliw jarayoni esa "public partial class Name" korinishida ociladi
+va qaytadan ociliwi ham huddi wunday boladi. Agar ikkalasida ham bir birida yoq prop lar ocilgan bolsayu bu classlardan
+object oladigan bolsak shu ikkalasidagi prop larning hammasi ciqaveradi. Uning iwlatadigan holatlaridan biri bu
+etaylik bizning bitta clasimiz ucun iwlaydigan DataBase bor va bizga bowqa classdagi proplar ham wu DataBase bn
+iwlawi kerak bovotti, owanda agar biz bowqa classdagi bitta nom ostida partial class yaratib huddi wu nom ostida 
+DataBase bn iwlaydigan classni ham nomini bir xil qilgan holda partial qiladigan bolsak, ikkala classdagi malumotlarni 
+bitta DataBase un iwlatsak boladi. 
+	Eng muhim qoidalaridan biri: NameSpace, Access Modifier, va Nomi bir hil boliwi lozim.
+
+
+
+
+
+					EXTENSION METHODS
+
+	Extension methodlar juda ham muhim va kop ishlatiladigan methodlarimizdan biri hisoblanadi. Yana bir misol tariqasida
+Tasavvur qilaylik bitta class ocdik va unga ancagina malumotlarni qowdik va qancadir vaqtdan song esimizga tuwib qoldiki bir
+qanca malumotlarni qowmagan ekanmiz, ammo biz bu classni endi bowqa ozgartirmoqci emasmiz, ana owa paytda EXTENSION method
+yaratib qoysak boladi. Extension method yaratamiz va owa biz esimizdan ciqib qolgan classdagi object un beemalol iwlataveramiz,
+owa classning objectidan uwbu extension method ni ham olib iwlataveriwimiz ham mumkin. Ammo bu method bowqa joyda turadi bowqa
+classda joylawgan boladi. Ammo owa biz malumot qowiwimiz kerak bolgan clasimiz un iwlayveradi.
+	Extension methodlar juda kop holatlarda stringBuilder lar un qollaniladi, cunki unga funksiyalar yetarli emasda, kop emas,
+wuning un unga uwbu method yaratilinib qollanaveriladi.
+	Extension method har doim static boladi va uni iwlatiw ucun qabul qiladigan argumentdan oldin "this" kalit sozi orqali
+iwlatiwimiz mumkin.
+
+

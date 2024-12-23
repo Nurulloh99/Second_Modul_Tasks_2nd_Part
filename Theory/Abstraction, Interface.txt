@@ -1,0 +1,30 @@
+
+	
+			ABSTRACTION - Mavhumlik
+
+	Abstraction - bu, lug'aviy ma'nosi mavhumlik bolib, Ota classlar asosan abstract boladi, 
+dasturlashda abstract qlingan classlar boshqa classlar uchun mavhum hisoblanadi, ya'ni uning 
+ichidagi kodlar boshqa classlar uchun korinmaydi, boshqa classlarga ko'rinadigan joyi nima qabul 
+qivottiyu nma qaytarib bervotti, shu jihatlari korinadi holos. Yana bir qoidasi, abstract qilingan 
+classlardan xech qachon object olib bo'lmaydi lekn meros olib boladi. Boshqa classlar bilan faqatgina 
+meros olish orqali ulangan holda ishlatilinadi. Abstract classda ctor (constructor) e'lon qilsa 
+boladi, lekn bu faqatgina inhert qvotgan child class uchungina ishlaydi.
+	
+
+
+			ABSTRACTION da methodlarning 3 xil korinishi.
+
+	1 chi korinish - Abstractionda classlarda methodlar ham abstraction bolishi mumkin, lekn bu 
+methodlar abstract qilingan classning ichida yaralsa ularning jingalak qavsli tana qismi bo'lmaydi 
+faqatgina nimani qaytarishi yoki nima qabul qilib nima qaytarishi yoziladi holos, va bu method larni 
+tanasini ishlatishimiz uchun biz shu classdan meros olingan classning ichiga xuddi shu methodni TANASI
+bilan OVERRIDE kalit sozi orqali qaytadan yozishimiz kerak bo'ladi.
+
+	2 chi korinishi - Abstraction classlarda virtual methodlar ham yaratsa boladi, bunda abstract 
+qilingan classning ichida yaralgan method virtual bolsa uni ishlatishimiz uchun meros olinayotgan classda 
+yana qaytadan huddi shu methodni bir xil nom ostida buni ham OVERRIDE kalit sozi orqali ishga tushirishimiz 
+mumkin.
+	3 chi korinishi - Abstract classlarda oddiy konkret classlar ham yaratilinadi. Lekn buni biz faqatgi 
+meros olingan classlarda nomini ham vazifasiniham ozgartirmasdan qanday ochilgan bolsa huddi shu holatdagi 
+vazifasi bilan ishlatishga majbur bolamiz. Qachonki meros olgan classlarni ishga tushiradigan bolsak, huddi 
+shu method boshida qanday ochilgan bolsa huddi shu holda ishlayveradi.
