@@ -1,0 +1,8 @@
+
+	
+						OOP
+
+	OOP -> bu reaswifrofka qilib koradigan bolsak, "Object Oriented Programming" ya'ni lugaviy manosi "Obyektga Yonaltirilgan Dasturlash"
+degan manoni anglatadi. OOP bu ozi aslida paradigma, yani dasturlarni kotariwning ikki xil usuli bolsa bu OOP wu ikki hil usulning biri hisoblanadi 
+yana biri esa bu "Functional" bular faqat methodlardan iborat boladi. Agar biz OOP dan foydalanadigan bolsak, bunda biz classlar va objectlarni oz
+iciga olgan holda OOP dan foydalaniwimiz mumkin boladi.

@@ -1,0 +1,11 @@
+
+
+
+						STATIC
+
+	Static = bu access modifier EMAAAS. Static bu CLASSLARGA, PROPERTIESGA, FUNKSIYALARGA, CONSTRUCTORLARGA ham qoyilaveradi. Etaylik biron bir 
+classning icida static propertie yoki method ocilsa bu propertie yoki method faqatgina wu classga tegiwli boladi. NON-STATIC esa faqatgina 
+objectlarga tegiwli hisoblanadi. Static method, proplarni asosan classlarning nomi orqali caqirib iwlatamiz, non-staticlarni esa object orqali caqirib 
+iwlatiwimiz mumkin. Agarki static calassning icida biron bir ozgaruvci ocsak, bu ozgaruvci aftamatik tarzda staticga aylanib qolaveradi.
+Yana bir muhim qoidalaridan biri, STATIC ning icida faqatgina STATIC method, proprties larni iwlata olamiz, non-staticni iwlatiwimiz un esa alohida 
+object ogan holda iwlatiwimiz kerak boladi. Lekin NON-STATIC classlarni icida esa staticni ham non-staticni ham caqirib iwlataversak boladi.

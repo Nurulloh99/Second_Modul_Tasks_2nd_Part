@@ -1,0 +1,70 @@
+
+
+
+						ENCAPSULATION
+
+	Encapsulation bu - malumotlarni tawqarida iwlatilmasligi kerak bolgan joyga cqib ketiwini oldini oladi. Odatda dasturimiz asosan encaosulation 
+holatda boladi, yani hide qliniwda iwlatilinadigan har bir holat yani, access modifier yoki abstraction methodlarni qollaganimizda yoki bowqa turdagi usullar bn
+malumotlarni tawqi muhitda yawiriwga harakat qiliwimiz bu encapsulation deyiladi.
+	Qonuniyati boyica encapsulation GET & SET kalit sozlari yordamida yaratamiz. Toliq encapsulationni quidagi tarzda yaratiwimiz mumkin:
+
+				1)    private int _age;
+	
+				2)    public int GetAge()
+				      {
+				           return _age;
+				      }
+
+				3)    public void SetAge(int age)
+				      {
+				           _age = age;
+				      }
+
+	Hozir yuqoridagi kodimizning 1 chi qatorida encapsulation qlinadigan yani capsulaning hide qlinadigan qismi yozilgan, biz endi bu qism bn gaplawiw 
+un 2 chi va 3 chi qatordagi kodlarni yozib olishimiz kerak, yani 2 chi qatorda biz anniq bir malumotni olmoqci bolsak biz encapsulationning GET kalit sozi 
+yordamidagi yoldan foydalanamiz, agar biz unga qandaydir malumot yuklab keyin yana qayta natijasini oliwimiz un SET kalit sozi yordamidagi yoldan foydalanamiz.
+SET orqali iwlawning yana bir qulaylik tomoni, agar biz aynan bir kicik qisimni koddagi bowqa qismlarga tasir qilmasdan ozgartirmoqci bolsak, shu SET 
+funksiyasini icining ozida ozgartirib ketiwimiz mumkin boladi. Bu encapsulationni GetterSetter deb ham nomlasak boladi. Yuqorida encapsulationning tolliq 
+yozilgan koriniwi.
+
+
+
+
+
+	Bundan tawqari encapsulatsiya qliwning qisqaroq usuli ham mavjud. yani bu quidagi koriniwda boladi, va bu korinishdagi usulga biz bemalol logic 
+qismini iciga ozimiz beemalol yoza olamiz:
+
+
+				1)    private string _password:
+
+				2)    public string Password
+				      {
+				           get { return _password; }
+				           set { _password = value; }	
+				      }
+
+
+	Yuqoridagi korinishni "propfull" x2 TAB bosiw orqali ciqariwimiz mumkin va bu encapsulationning tayyor wabloni hisoblanadi.
+
+
+
+	Quidagi korinish shu propfull yordamida password un ocilgan encap ning validatsiya qlib iwlangan korinishi:
+
+
+				private string _password;
+
+				public string Password
+				{
+				     get { return _password; }
+				     set
+				     {
+				          if(_password.Length >= 8)
+					  {
+					       _password = value;
+					  }
+				     }
+				}
+
+	Bu yerda yuqorida yozilgan propfull wabloniga logic misol yozilgan korinishi.
+				     
+

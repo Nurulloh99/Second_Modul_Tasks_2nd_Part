@@ -1,0 +1,17 @@
+
+
+
+						Reference & Value in Stack & Heap memory
+
+	Stack va Heap bu kompyuterimizdagi alohida-alohida xotiralar hisoblanadi, va bularning icida ishlaydigan maxsus korsatmalari mavjud va bular 
+quidagilardan iborat boladi:
+	Bizda Reference va Value type larimiz mavjud bu har ikkalasini ham alohida farqlari bor, bulardan biri Value ni oladigan bolsak, Value typelarga 
+ozimizning (primitive) type tiplarimiz kiradi yani: INT, FLOAT, DOUBLE, CHAR.
+Reference type ga esa quidagilar kiradi: string, classdan olinadigan objectlar, collections(array, list) ext.
+	Bularning asosiy farqi xotirada iwlawi hisoblanadi. Bular xotiraning RAM qismida joylawgan boladi va shu RAM 5 ga bolingan bolsa bular faqatgina 
+shu 2 ta qismida joylawadi, birinchisi Stack bolsa ikkinchisi Heap. Value(primitive) tipdagi ozgaruvchilar xotiraning STACK qismida tugilib, yawab va huddi 
+shu qismida o'ladi, sababi bular ozini hajmini xech qacon ozgartirmaydi. Lekin Reference tipining ozgaruvchilarini joylawgan orni STACK da boladyu lekin 
+ularning qiymati Heap da joylawgan boladi. Ref tipidagi ozgaruvcilarning qiymati birbiriga reference yani bir biriga boglanib turganligi sababli, yani 
+berilgan bir newta ozgaruvci va ularni bir biriga yuklagandan song ularning hammasi heap dagi bittagina qiymatga qarab turadi, va qaconki orasida lyubboy 
+bittasini ozgartirgan paytimiz reference typening barca qiymatlari ozgarib ketadi. Value(primitive) taypdagi ozgaruvchilarda esa unday emas birontasini 
+ozgartirmoqci bolsangiz aynan owaning ozi ozgaradi, qoganlari esa oz holida qoladi.

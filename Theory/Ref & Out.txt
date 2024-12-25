@@ -1,0 +1,10 @@
+
+
+
+						REF & OUT
+
+	Ref & Out bu asosiy maqsadlaridan biri biron bir ozgaruvcining qiymati biron bir funksiyaning icida ozgarsa, owa bolayotgan ozgarishlarni funksiyadan 
+tawqariga tasir qildirish ucun kerak boladi. 
+	Static qoidalaridan bu: REF funksiyalarda bowlangic qabul qiladigan qiymatlari boliwi wart, Icida ozgariwlar boliwi wart emas. Lekin OUT da tawqaridan 
+qabul qiladigan bowlangic qiymat boliwi wart emas, lekn bu funksiyaning icida ozgariwi yani (qiymat yuklanishi) wart.  
+ 

@@ -1,0 +1,15 @@
+ 
+
+						ARRAY
+
+	Array bu - Array bu static olcamli massivdir. Massivlar yordamida bir xil turdagi ma'lumotlarni bir joyda saqlash va ularga indeks orqali murojaat qilish mumkin. Uning hajmi ozgarmas 
+hisoblanadi va listga qaraganda tezroq iwlaydi, sababi uning icidagi methodlari iwlaw majburiyatlari listga qaraganda kamroq, va bular reference type 
+hisoblanadi.
+
+
+
+						LIST
+
+	List bu = List bu dinamik olchamli massivdir, List yordamida bir xil turdagi ma'lumotlarni bir joyda saqlaw va ularga indeks orqali murojat qiliw mumkin, 
+lekin buning hajmi avtomatik ravishda jivackaga oxwab kengayib yoki qisqarib ketaveradi. Qulayliklari uning icida ozining alohida yordamci funksiyalari boladi. 
+Lekin tezlik jihatdan Massivga qaraganda sekinroq iwlaydi.

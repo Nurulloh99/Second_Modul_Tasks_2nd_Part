@@ -1,0 +1,57 @@
+
+
+
+							STRING
+
+C# tilida string — bu matnlarni ifodalash uchun ishlatiladigan ma'lumotlar turidir. string o'z ichiga harflar, raqamlar, maxsus belgilar va 
+bo'sh joylar kabi simvollarni olishi mumkin.
+	String bu (toliq bolmagan) reference type ozgaruvchi hisoblanadi. Yani string ning tugilishi yani joyi stack da boladi lekn uning qiymati 
+heap dagi alohida ozi un string pool da boladi. String bu C# dasturlaw tilida immutable hisoblanadi. Yani stringni ozgartirib bolmaydi. Uni ozgartirish
+un yana yangi ozgaruvchi ociwga togri keladi, bu esa ortiqca xotira kop sarflaniwiga sababci boladi.
+
+	Bundan tawqari biz agar stringni ozgariw holatida yani MUTUABLE holatida iwlatmoqci bolsak, biz buning un alohida ocilgan STRINGBUILDER degan classni 
+iwlatiwimiz kerak boladi. Stringning ozi xec qacon mutuable bola olmaydi. StringBuilderda esa qiyatni ozgartirmoqci bolsak borib joyini owa yengi qiymatga 
+ozgartirib keladi, yangi joy ocmaydi.
+
+_____________________________________________________________________________________________________________________________________________________________________
+
+		SPLIT function = Stringda "Split" degan funksiya bor va biz agar bu funksiyani iwlatmoqci bolsak, biz birinci gapimizni yozamiz va ajratilinishi
+kerak bolgan joyga xohlagan belgimizni qoyamiz, va pasdan yana alohida var bn ozgaruvchi ocib Split funksiyasini iwlatamiz, buni quidagi tarzda amalga owi-
+riwimiz mumkin:
+
+			var stringValue = "phone,car,TVset,home,WiFi";
+
+			var splittedTextInArray = stringValue.Split(',');
+
+	Hozir bu yerda birinchi qatordagi joyda string tipida qiymat berilgan, ikkinchi qatorda esa shu stringning qiymatini berilgan belgi yani vergul
+yordamida ajratib array(massiv) holatida ajratib alohida-alohida cqarib bermoqda.
+
+
+_____________________________________________________________________________________________________________________________________________________________________
+
+
+	JOIN function = Bu funksiya, tepadagi massiv holatiga keltirilgan string sozlarni yana qaytadan orqaga yani string holatiga qaytarib beradi. Buning
+un biz quidagi koriniwdagi holatni amalga owiriwimiz kerak boladi.
+
+
+			var words = new string[] {"salom", "privet", "hello", "konicceva"};
+
+			var joinedString = string.Join("$", words);
+
+			Console.WriteLine(joinedString);
+
+	Hozir bu yerda birinci qatorda Massivni keltirganmiz va biz buni string holatiga keltirishimiz kerak, ikkinci qatorda esa endi wu massivni string 
+holatiga qaytariw un "Join" funksiyasini iwlatmoqdamiz av qavsning iciga nima bn ajratiwni va qaysi massivning sozlarini ajratiwni bermoqdamiz. BU yerda 
+Hozi berilgan sozlarimizni bitta qilgan holda va $dollar belgisi bilan ajratgan holda ciqarib beradi.
+
+	StartWith vs EndWith
+
+
+
+
+
+
+
+
+
+

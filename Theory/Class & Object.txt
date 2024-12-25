@@ -1,0 +1,16 @@
+
+
+					CLASS
+
+	Class bu = Buni biz bitta qolip deb oladigan bolsak bu qolipdan olinadigan narsa object deyiladi.  
+(OOP) paradigmasining asosiy tushunchalaridan biridir. Class ma'lum bir turdagi ob'ektlar uchun properties va methods ni belgilashga yordam beradi. 
+Classlarning asosan ikki xil vazifasi boladi, 1 cisi malumotlarni tawiw bolsa 2 cisi ish bajaradigan class, yani ishlab turadi.
+
+	Klass tuzilmasi
+Sinfda quyidagi elementlar bo'lishi mumkin:
+
+(Properties): Class ob'ektining holatini saqlaydigan o'zgaruvchilar.
+(Methods): Class ob'ekti bilan ishlash uchun bajariladigan funktsiyalar yoki amallar.
+(Constructors): Ob'ekt yaratilganda avtomatik ravishda chaqiriladigan metodlar.
+(Fields): Class ichidagi o'zgaruvchilar.
+(Events) va (Exceptions) kabi boshqa imkoniyatlar ham bo'lishi mumkin.

@@ -5,10 +5,10 @@
 	Abstraction - bu, lug'aviy ma'nosi mavhumlik bolib, Ota classlar asosan abstract boladi, 
 dasturlashda abstract qlingan classlar boshqa classlar uchun mavhum hisoblanadi, ya'ni uning 
 ichidagi kodlar boshqa classlar uchun korinmaydi, boshqa classlarga ko'rinadigan joyi nima qabul 
-qivottiyu nma qaytarib bervotti, shu jihatlari korinadi holos. Yana bir qoidasi, abstract qilingan 
-classlardan xech qachon object olib bo'lmaydi lekn meros olib boladi. Boshqa classlar bilan faqatgina 
-meros olish orqali ulangan holda ishlatilinadi. Abstract classda ctor (constructor) e'lon qilsa 
-boladi, lekn bu faqatgina inhert qvotgan child class uchungina ishlaydi.
+qivottiyu nma qaytarib bervotti, shu jihatlari korinadi holos. Asosan murakkablikni yawirib beradi 
+Yana bir qoidasi, abstract qilingan classlardan xech qachon object olib bo'lmaydi lekn meros olib boladi. 
+Boshqa classlar bilan faqatgina meros olish orqali ulangan holda ishlatilinadi. Abstract classda ctor 
+(constructor) e'lon qilsa boladi, lekn bu faqatgina inhert qvotgan child class uchungina ishlaydi.
 	
 
 
@@ -28,3 +28,18 @@ mumkin.
 meros olingan classlarda nomini ham vazifasiniham ozgartirmasdan qanday ochilgan bolsa huddi shu holatdagi 
 vazifasi bilan ishlatishga majbur bolamiz. Qachonki meros olgan classlarni ishga tushiradigan bolsak, huddi 
 shu method boshida qanday ochilgan bolsa huddi shu holda ishlayveradi.
+
+
+
+
+
+
+				INTERFACE
+
+	Interface - bu 100 foiz abstract class, bunga ummuman body qismi yozilmaydi. Interface ni contract deb yani 
+shartnoma deb ham tasavvur qilsak boladi, Interface yaratilganda bu odatda public va class deb yozilgan qismiga 
+interface deb yoziliwi kerak boladi, iciga yani body qismiga yoziladigan prop lar shartnomaning shartlari hisoblanadi, 
+agar biz biron bir concret classga otib uning nomini yonidan ikki nuqta qoyib Interface ni nomini yozib inhert qilib qoysak,
+shartnoma imzolanganini bildiradi. Endi bu shartlarni bajariw ucun concret classnining iciga interfaceda bodysiz yozilgan 
+Methodlarni hammasini toliq tanasi blan yozib ciqiwi kerak boladi. Buni implement qilib yani body qismi bn yoziladigan 
+shablonini concret classda ciqarib olish un ALT + (2)ENTER bosilsa uni implement yani shablon qismini ciqargan bolamiz.
