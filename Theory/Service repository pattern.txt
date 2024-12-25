@@ -1,0 +1,14 @@
+
+
+
+							SERVICE REPOSITORY PATTERN
+
+	Service rep pattern bu yozayotgan kodlarimizni bolimlarga boliw hisoblanadi, Bu rep pattern da asosan 3 ta bolim boladi, bular birincisi "Service" 
+frontend qismdan kelayotgan malumotlarni tekwiriw, validatsiya qiliw, convertatsiya qiliw, funksiyalarni ishlatish bn shugullansa, shu 
+service bolim bajargan ishlarni tayyor holatini keyingi bolim yani "Repository" bolimi, uchinchi bolimga yani "DataBase" ga otqazib keladi.
+DataBase bolimida biz oldin Model yani malumot tawuvchi class yaratar edik lekn Data bazaga saqlanadigan classlar ENTITY deyiladi. Wuning un ham endilikda 
+biz Malumot tawuvchi classlarni entitiy nomi bn ocamiz. Endi esa Service bolimida bizda DTO(Data Transfer Object) lar boladi, yani owa yuqorida takidlab 
+otilinganidek, validatsiya, convertatsiya qlingan malumotlarni DTO larga yaratgan holda amalga owiramiz, cunki yuqorida DataBase bolimida kelgan malumotlarni 
+togridan togri frontend qismga berib bolmaydi va bu DTOlar owa hollarda encapsulyatsiya holatida bolib turadi, Bu encapsulyatsiya bolgan holati frontendga 
+berilmagan holda lekn toliq malumotlari bn repository bolimiga otqaziladi, bu bolim esa wuncaki DataBase ga borib joylawtirib kelaveradi.
+
