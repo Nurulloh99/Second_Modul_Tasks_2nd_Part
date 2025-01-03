@@ -1,0 +1,59 @@
+
+
+
+
+					Boxing & Unboxing
+
+	Boxing - Boxing bu Value (Primitive) tipdagi ozgaruvcilarimizni Reference tipga otqazib beradi.
+	Unboxing - Unboxing esa shu otqazilganlarni ortga qaytariw, yani Ref dan Value tipga otqazib beradi.
+	Reference tip deganda ham asosan OBJECT nazarda tutiladi, yani VALUE tipdagilarni Refning OBJ siga 
+otqizilishi va Ref ning obj sidan Value ga qaytariliwi nazarda tutiladi. Ozi .NET da va bowqa tillardayam 
+OBJECT degan class bor va deyarli hamma classlar mana shu object dan inhert qilingan yani meros ogan boladi.
+
+	Boxing ning jarayoni quidagica boladi:
+
+		int a = 4;
+		Object obj1 = a;
+
+	Hozir bu yerda int yani "value" tipidagi ozgaruvchini Object yani "Reference" tipiga otqizdik va 4
+degan qiymatimiz bizda obj1 ozgaruvchisiga yuklangan holda Ref tip bolib qoldi.
+
+
+	Unboxing ning jarayoni quidagicha boladi:
+
+		int b = obj1;
+
+	Leking agar biz buni endi qaytdan intga emas balki long tipiga otqizmoqci bolsak:
+
+		long b = (long)(int)obj1;
+
+	Bu yerda esa endi obj1 degan ref tiplik 4 qiymatimizni birinchi qaytadan int holatiga qaytarib 
+undan soooo'ngina biz longa yuklavommiz. Agar obj1 dan oldin ozining value tipda qanday tip bolgan bolsa 
+owa tipga birinci otqizmasdan ummuman bowqa tipga yuklamoqci bolsak, koooootta exeption bilan so'kadi dastur.
+
+
+
+
+
+				ArrayList
+
+	ArrayList bu collectionlarning bir turi hisoblanadi, buning tipi yuqorida takidlab otilinganidek
+object hisoblanadi. Va bu bowqa collectionlardan farqli olaroq bu oziga lyubboy tipdagi ozgaruvchilarning
+qiymatini qabul qilaveradi. Yani biz agar quidagi korinishda List yaratadigan bolsak, bu faqat stringni 
+qabul qiladi. Bundan tawqari ishlash tezligi ham boshqa collectionlarga nisbatan sekinroq ishlaydi.
+Cunki yuqorida bilganimizdek boxing/unboxing jarayonlari ham bir tipdan bowqa tipga otqazib iwlagunica
+ham anca vaqt sarflab qoyadi.
+
+		List <string> value = new List <string>();
+		value.Add("Nurulloh");
+
+	Bu yerda biz faqatgina string tipdagi qiymatni yuklay olamiz. 
+
+	Lekin quidagi korinishda esa biz string ni ham int ni ham va hattoki object ni ham qabul 
+qildirtiraversak boluradi:
+
+		ArrayList value = new ArrayList()
+		value.Add("Nurulloh");
+		value.Add(1999);
+		value.Add(new Test);
+

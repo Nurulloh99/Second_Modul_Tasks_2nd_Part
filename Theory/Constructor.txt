@@ -7,4 +7,7 @@
  Constructorni har bir class un yaratsak boladi va yaratiwimiz ham kerak, agar biz biron bir class un constructor yaratmasak owa classning ozini 
 default constructori boladi va owa iwga tuwiwni bowlaydi, agar biz bitta ctor yaratsak bold bu default ctor aftomatik o'cadi. Odatta ctor ocilmaydigan 
 classlar ham mavjud. Classlarning malumot tawidigan bolimida ctor yaratmimiz, lekin ish bajaradigan classlarda biz ctor yaratiwimiz kerak. Biz bittagina 
-ctor bn ceklanmasdan birnewta ctor ocsak ham boladi. Bu vaqtda ctorimiz constructor overloading holatida ishlaydi.
+ctor bn ceklanmasdan birnewta ctor ocsak ham boladi. Bu vaqtda ctorimiz constructor overloading holatida ishlaydi. Ctorlar static ham bola oladi va ularga 
+access modifier qoymagan holda ocamiz, lekin agar biz biron bir concret classning iciga bitta static va bitta non static ctor ocadigan bolsak dastur run 
+boliwi bn pooolniy dastur davomida birrrinci va bir marta wu static ctor iwlavoladda va wu bn bowqa iwlamaydi, non static esa unday emas, u tolliq 
+imkoniyatlarini iwga sogan holda iwlab beradi.

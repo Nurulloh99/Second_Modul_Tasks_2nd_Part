@@ -2,9 +2,9 @@
 
 						ARRAY
 
-	Array bu - Array bu static olcamli massivdir. Massivlar yordamida bir xil turdagi ma'lumotlarni bir joyda saqlash va ularga indeks orqali murojaat qilish mumkin. Uning hajmi ozgarmas 
-hisoblanadi va listga qaraganda tezroq iwlaydi, sababi uning icidagi methodlari iwlaw majburiyatlari listga qaraganda kamroq, va bular reference type 
-hisoblanadi.
+	Array bu - Array bu static olcamli massivdir. Massivlar yordamida bir xil turdagi ma'lumotlarni bir joyda saqlash va ularga indeks orqali murojaat 
+qilish mumkin. Uning hajmi ozgarmas hisoblanadi va listga qaraganda tezroq iwlaydi, sababi uning icidagi methodlari iwlaw majburiyatlari listga qaraganda 
+kamroq, va bular reference type hisoblanadi.
 
 
 

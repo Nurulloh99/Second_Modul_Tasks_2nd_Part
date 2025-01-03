@@ -1,0 +1,11 @@
+
+
+
+
+			Collections
+
+	Collections bu ozi manosi toplam yani qiymatlarni toplab turuvchi tipga aytiladi, masalan biz bilgan 
+Array(Massiv), List, ArrayListlar ham collections larning biri hisoblanadi. Bundan tawqari collectionslarning 
+ikkita eng katta turi mavjud: Bular "GENERIC" & "NON-GENERIC" collectionlar. Bularning ikkalasi ham ikki hil 
+namespace da turadi. Bittasi "namespace system.collection.generic" dan kelsa ikkincisi "namespace system.collection"
+ning ozidan keladi.

@@ -152,7 +152,7 @@ public class StudentService : IStudentService
         }
 
 
-        if (student.Email.EndsWith("@gmail.com") && student.Email.Length < 10)
+        if (!student.Email.EndsWith("@gmail.com") && student.Email.Length < 10)
         {
             throw new Exception("Error occured!!!");
         }

@@ -1,12 +1,11 @@
 ﻿using System.Text.Json;
-using _2._7_Lesson.Api.Data_Access.Entities;
+using Lesson_2._10_Api.DataAccess.Entities;
 
-namespace _2._7_Lesson.Api.Repositories;
+namespace Lesson_2._10_Api.Repositories;
 
 public class StudentRepository : IStudentRepository
 {
-
-    public string _path = "../../../DataAccess/Data/Students.json";
+    public string _path = "../../../DataAccess/Data";
     private List<Student> _students;
 
     public StudentRepository()
@@ -21,14 +20,6 @@ public class StudentRepository : IStudentRepository
         _students = ReadAllStudents();
     }
 
-
-    public List<Student> ReadAllStudents()
-    {
-        var studentJson = JsonSerializer.Deserialize<List<Student>>(File.ReadAllText(_path));
-        return studentJson;
-    }
-
-
     public void SaveData()
     {
         File.WriteAllText(_path, JsonSerializer.Serialize(_students));
@@ -36,18 +27,17 @@ public class StudentRepository : IStudentRepository
 
 
 
-    public void EmailContains(string email)
+    public Guid WriteStudent(Student student)
     {
-        foreach (var student in _students)
-        {
-            if (student.Email == email)
-            {
-                throw new Exception("Bunday email mavjud");
-            }
-        }
+        _students.Add(student);
+        SaveData();
+        return student.Id;
     }
 
-
+    public List<Student> ReadAllStudents()
+    {
+        return JsonSerializer.Deserialize<List<Student>>(File.ReadAllText(_path));
+    }
 
     public Student ReadStudentById(Guid studentId)
     {
@@ -62,24 +52,30 @@ public class StudentRepository : IStudentRepository
         return null;
     }
 
+    public void MailContains(string mail)
+    {
+        foreach (var student in _students)
+        {
+            if (object.Equals(student.Mail, mail))
+            {
+                throw new Exception("Bunday email mavjud!");
+            }
+        }
+    }
 
-    public void RemovingStudent(Guid studentId)
+    public void RemoveStudent(Guid studentId)
     {
         _students.Remove(ReadStudentById(studentId));
         SaveData();
     }
 
-
-    public void UpdatingStudent(Student student)
+    public void UpdateStudent(Student student)
     {
         _students[_students.IndexOf(ReadStudentById(student.Id))] = student;
         SaveData();
     }
 
-    public Guid WriteStudent(Student student)
-    {
-        _students.Add(student);
-        SaveData();
-        return student.Id;
-    }
+
+
+
 }

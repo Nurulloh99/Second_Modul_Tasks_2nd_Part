@@ -4,14 +4,18 @@
 							STRING
 
 C# tilida string — bu matnlarni ifodalash uchun ishlatiladigan ma'lumotlar turidir. string o'z ichiga harflar, raqamlar, maxsus belgilar va 
-bo'sh joylar kabi simvollarni olishi mumkin.
-	String bu (toliq bolmagan) reference type ozgaruvchi hisoblanadi. Yani string ning tugilishi yani joyi stack da boladi lekn uning qiymati 
-heap dagi alohida ozi un string pool da boladi. String bu C# dasturlaw tilida immutable hisoblanadi. Yani stringni ozgartirib bolmaydi. Uni ozgartirish
-un yana yangi ozgaruvchi ociwga togri keladi, bu esa ortiqca xotira kop sarflaniwiga sababci boladi.
+bo'sh joylar kabi simvollarni olishi mumkin. String bu (toliq bolmagan) reference type va immutable ozgaruvchi hisoblanadi. 
+Yani stringni ozgartirib bolmaydi. Uni ozgartirish un yana yangi ozgaruvchi ociwga togri keladi, bu esa ortiqca xotira kop sarflaniwiga sababci boladi. Bundan tawqari 
+biz agar stringni ozgariw holatida yani MUTUABLE holatida iwlatmoqci bolsak, biz buning un alohida ocilgan STRINGBUILDER degan classni iwlatiwimiz kerak boladi. 
+Stringning ozi xec qacon mutuable bola olmaydi. StringBuilderda esa qiyatni ozgartirmoqci bolsak borib joyini owa yengi qiymatga ozgartirib keladi, yangi joy ocmaydi. 
+Bundan tawqari StringBuilderning qulay tomonlaridan biri uning icida ozining maxsus funksiyalari bor.
 
-	Bundan tawqari biz agar stringni ozgariw holatida yani MUTUABLE holatida iwlatmoqci bolsak, biz buning un alohida ocilgan STRINGBUILDER degan classni 
-iwlatiwimiz kerak boladi. Stringning ozi xec qacon mutuable bola olmaydi. StringBuilderda esa qiyatni ozgartirmoqci bolsak borib joyini owa yengi qiymatga 
-ozgartirib keladi, yangi joy ocmaydi.
+
+
+Yani string ning tugilishi yani joyi stack da boladi lekn uning qiymati 
+heap dagi alohida ozi un string pool da boladi. 
+
+	
 
 _____________________________________________________________________________________________________________________________________________________________________
 

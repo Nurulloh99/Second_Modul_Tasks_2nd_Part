@@ -3,11 +3,11 @@
 					GENERIC = <T>
 
 
-	Generic bu => Funksiya va methodlarni yonida, qiymat qabul qiladigan lyubboy joyda iwlatsa boladi 
-ishlatsak boladi, Bu generic iwlatganimizda com runTime vaqtida wu ozgaruvci typeni ozi aniqlab oladi, yani 
-int, float, string kabi ozgaruvcilar ucun alohida func yoki methodlar yaratib otirilmaydi, yani bz shu generic 
-yordamida biz qaysi type ni iwlatmoqchi bolsak, owani ozi aftomatik tarzda aniqlaydi va kodni qaytadan shu 
-ozgaruvchi uchun yozadi.
+	Generic bu => Generic bu kop toifalik boladi, va classlar, methodlarni generic qliwimiz mumkin.
+Class va methodlarni yoniga genericning belgisini "<T>" qoyadigan bolsak com runTime vaqtida wu ozgaruvci 
+typeni ozi aniqlab oladi, yani int, float, string kabi ozgaruvcilar ucun alohida func yoki methodlar yaratib 
+otirilmaydi, yani bz shu generic yordamida biz qaysi type ni iwlatmoqchi bolsak, owani ozi aftomatik tarzda 
+aniqlaydi va kodni qaytadan shu ozgaruvchi uchun yozadi. Umumi qilib etganda lyubboy tipga moslawib ketilinaveradi.
 .
 
 
@@ -33,7 +33,9 @@ etaylik bizning bitta clasimiz ucun iwlaydigan DataBase bor va bizga bowqa class
 iwlawi kerak bovotti, owanda agar biz bowqa classdagi bitta nom ostida partial class yaratib huddi wu nom ostida 
 DataBase bn iwlaydigan classni ham nomini bir xil qilgan holda partial qiladigan bolsak, ikkala classdagi malumotlarni 
 bitta DataBase un iwlatsak boladi. 
-	Eng muhim qoidalaridan biri: NameSpace, Access Modifier, va Nomi bir hil boliwi lozim.
+	Partial classlarni asosiy yana bir maqsadlaridan biri bu kodlarimizni tartibli holda saqlab turadi, etaylik 
+masalan bizda bir studentning shaxsiy ma'lumotlari alohida bir partialda tursa uning oqishi haqidagi ma'lumotlari 
+alohida partialda turadi. Eng muhim qoidalaridan biri: NameSpace, Access Modifier, va Nomi bir hil boliwi lozim.
 
 
 
@@ -49,7 +51,7 @@ owa classning objectidan uwbu extension method ni ham olib iwlataveriwimiz ham m
 classda joylawgan boladi. Ammo owa biz malumot qowiwimiz kerak bolgan clasimiz un iwlayveradi.
 	Extension methodlar juda kop holatlarda stringBuilder lar un qollaniladi, cunki unga funksiyalar yetarli emasda, kop emas,
 wuning un unga uwbu method yaratilinib qollanaveriladi.
-	Extension method har doim static boladi va uni iwlatiw ucun qabul qiladigan argumentdan oldin "this" kalit sozi orqali
+	Extension methodlarimiz ham va uning classlari har doim static boladi va uni iwlatiw ucun qabul qiladigan argumentdan oldin "this" kalit sozi orqali
 iwlatiwimiz mumkin.
 
 
