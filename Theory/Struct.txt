@@ -1,0 +1,2 @@
+Struct bu classga oxwab iwlaydi, ozida faqat value type prop larni saqlaydi, struct ocilganda xotiradan ortiqca joy ocilmidi, haqiqiy classga nisbatan 
+tezroq iwlaydi.

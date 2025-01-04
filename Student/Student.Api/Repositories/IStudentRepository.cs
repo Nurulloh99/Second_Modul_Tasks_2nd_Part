@@ -11,5 +11,4 @@ public interface IStudentRepository
     void EmailConsists(string email);
     void RemoveStudent(Guid studentId);
     void UpdateStudent(Students student);
-    void EmailConsists(Students newStudent);
 }

@@ -9,3 +9,150 @@ Array(Massiv), List, ArrayListlar ham collections larning biri hisoblanadi. Bund
 ikkita eng katta turi mavjud: Bular "GENERIC" & "NON-GENERIC" collectionlar. Bularning ikkalasi ham ikki hil 
 namespace da turadi. Bittasi "namespace system.collection.generic" dan kelsa ikkincisi "namespace system.collection"
 ning ozidan keladi.
+
+
+			Stack<> & Stack
+
+	Stack bu collectionning anniq turlaridan biri hisoblanadi va buning iwlawi (LIFO) korinishida iwlaydi. Stackning 
+ikki xil korinishi mavjud: Generic & Non-Generic. Non-Generic Stackning tipi Object hisoblanadi. Agar biz stackga qiymat
+qowmoqchi bolsak bunga biz endi "Add" kalit sozini iwlata olmaymiz. Biz bunga endi "Push" kalit sozi orqali qiymat qowib
+uning ustida amallar bajara olamiz va bunda bizga (LIFO) korinishida yana "Last In First Out" qoidasi boyicha iwlashi kere
+boladi va biz birinchi kirgan qiymatni srazm chiqara olmaymiz, chiqarishimiz uchun "Peek" yoki "Pop" kalit sozlarini
+iwlatiwimiz kerak boladi. Lekin agar biz "Peek" kalit sozi orqali chiqarmoqchi bolsak oxiridagi qiymat chiqaveradi lekin
+u oz ornidan ochib ketmaydi. Lekin agar biz "Pop" kalit sozi orqali chiqaradigan bolsak, biz oxiridagi qiymatni ham chiqara 
+olamiz va ham ochirib taway olamiz va shu yol orqali yani oxiridan bowlab ham chiqarib ham ochirib birincidagi qiymatgaca 
+boriwimiz mumkin. Va natijada ooxirida birincidagi qiymatni ololimiz.
+
+	Stackning code da yozilish tartibi quidagicha boladi: 
+
+		Stack <string> stack = new Stack <string>();
+		stack.Push("1");
+		stack.Push("2");
+		stack.Push("3");
+		stack.Push("4");
+
+		Console.WriteLine(stack.Peek());	=>   4
+		Console.WriteLine(stack.Peek());	=>   4
+		Console.WriteLine(stack.Pop());		=>   4
+		Console.WriteLine(stack.Peek());	=>   3
+
+	Bu yerda hozir "Peek" orqali qiymatni ciqarvommiz, lekin oz ornidan ocibketmayabdi, va lekni "Pop" orqali ham 
+ciqarvommiz, bu koriniwda esa ham ikki marta chiqarib ham ikki marta ochirib tawavommiz.
+
+		
+
+
+
+
+
+
+
+				BERILGAN METHOD NI NIMA VAAZIFA BAJARAYOTGANINI KOMMENT SIFATIDA SAQLAB QOYIW
+
+	Bunda biz agar bironta class yaratsak va unga interface yaratadigan bolsak, mana shu interface ning tanasidan bitta 
+pasiga 3 ta slaw (///) belgisini qoysak komment yoziw un aftomatik raviwda ekranimizda shablon paydo boladi, va biz wu 
+interfacedagi method nima vazifa bajariwini qoldirib ketsak boladi.
+
+	Interface class:
+
+		public interface IMyService
+		{
+		     /// <Summary>
+		     /// Do ning vazifasi bajariw    <= bu yerda ozimiz xohlagan commentni qoldirsak boladi.
+		     /// </Summary>
+
+		     void Do;
+		}
+
+
+
+	Oddiy meros oladigan concret class:
+
+		public class MyService : IMyService
+		{
+		     public void Do()
+		     {
+			throw new NotImplementedExeption();
+		     }
+		}
+
+	Biz bu yerdagi oddiy meros oladigan concret classimizning ustiga sichqonchaning kursorini olib boradigan bolsak, 
+tepada biz interface da yozib qoldirgan commentimizni ya'ni bu "Do" methodi uchun "Do ning vazifasi bajariw" degan yozuv 
+korinib turadi, kak podskazka cunarli boliwi uchun.
+
+
+
+
+
+
+
+
+
+					QUEUE<> & QUEUE
+
+	Queue ham collectionlarning anniq turlaridan biri hisoblandi. Queue ning ham ikki xil korinishi mavjud, bular ham: 
+Generic va Non-Generic boladi. Non-Generic Queuening tipi Object hisoblanadi. Buning iwlaw korinishi (FIFO) korinishida iwlaydi. 
+Ya'ni ma'nosidan kelib ciqqan holda "Navbat" birinchi kirgan birinchi chiqadi sistemasida ishlaydi. Bundan tawqari QUEUE da biz 
+"Add" qiliw un "Add" kalit sozini emas, balki "Enqueue" kalit sozidan foydalangan holda qiymatni qowa olamiz, bundan tawqari 
+yuqorida "Stack" collectionida iwlatganimiz "Peek" kalit sozini ham bu yerda iwlata olamiz va lekin u qiymatlarni navbatma-navbat 
+chiqariw ucun esa "Dequeue" kalit sozi orqali ciqariwimiz mumkin boladi. Bu holatni quidagi korinishda bajariwimiz mumkin. 
+Queue ning code dagi yoziliwi quidagica boladi:
+
+		Queue queue1 = new Queue();					<= Non-Generic
+		Queue <string> strings = new Queue <string>();			<= Generic
+
+		strings.Enqueue("A");
+		strings.Enqueue("B");
+		strings.Enqueue("C");
+
+		Console.WriteLine(strings.Dequeue());			<=   A 
+		Console.WriteLine(strings.Dequeue());			<=   B
+
+
+
+
+
+
+
+
+				Dictionary<> & Hashtable
+
+	Dictionary bu collectionlarning bir turi hisoblanadi, buning ham ikki hil korinishi mavjud, Generic va Non-Generic. 
+Ishlash tezligi ham juda ham tez boladi "O1" darajada. Non-Genericning tipi object hisoblanadi, va bularning asosiy farqi: ozida ikkita 
+ozgaruvchini ya'ni KEY va VALUE ni qabul qilgan holda iwlaydi. Asosiy qoidalaridan biri bizda bu KEY ning qiymatu juda ham 
+unique boliwi lozim, va undagi value ni key orqali oliwimiz mumkin. bu yerda value bir hil boliwi mumkin lekin key xech qachon 
+bir hil bola olmaydi, srazm exeption otadi. 
+Bizda Dictionary quidagi korinishda ociladi, qiymat qowiladi va ekranga chiqariladi:
+
+		Dictionary <int, string> dic = new Dictionary <int, string>();
+
+		dic.Add(3, "salom");
+		dic.Add(4, "hello");
+		dic.Add(5, "salom");
+		dic.Add(6, "privet");
+
+	Biz agar bularni quidagi korinishda Consolega ciqarmoqci bolsagu va ularning key ya'ni unique nomini yozsak, undagi value
+qiymatini ekranga ciqarib beradi, shuning ucun ham key orqali value olinadi:
+
+		Console.WriteLine(dic[4]);		<=   hello
+		Console.WriteLine(dic[6]);		<=   salom
+
+
+
+
+
+
+				HASHTABLE
+
+	Hashtable bu Dictionaryni Non-Generic varianti bolib, bu asosan ozina object larni saqlaydi. Bundan tawqari buning valuesiga
+endi null ham yuklasak boladi. Agar biz buning key siga qandaydir objectni yuklasak, value siga esa yana bir bowqa Dictionaryni yoki 
+Listni yuklab ketaversak ham bolaveradi. Hashtablening code dagi korinishi quidagica yoziladi:
+
+		Hashtable ht = new Hashtable();
+
+		ht.Add(5, null);
+		ht.Add("salom", "hello");
+		ht.Add(new List<string>(), new Dictionary <int, string>());
+
+
+	
