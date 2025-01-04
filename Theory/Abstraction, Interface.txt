@@ -37,8 +37,7 @@ shu method boshida qanday ochilgan bolsa huddi shu holda ishlayveradi.
 				INTERFACE
 
 	Interface - bu 100 foiz abstract class, bunga ummuman body qismi yozilmaydi. Interface ni contract deb yani 
-shartnoma deb ham tasavvur qilsak boladi, Interface yaratilganda bu odatda public va class deb yozilgan qismiga 
-interface deb yoziliwi kerak boladi, iciga yani body qismiga yoziladigan prop lar shartnomaning shartlari hisoblanadi, 
+shartnoma deb ham tasavvur qilsak boladi, Interface yaratilganda bu odatda public dan song interface deb yoziliwi kerak boladi, iciga yani body qismiga yoziladigan prop lar shartnomaning shartlari hisoblanadi, 
 agar biz biron bir concret classga otib uning nomini yonidan ikki nuqta qoyib Interface ni nomini yozib inhert qilib qoysak,
 shartnoma imzolanganini bildiradi. Endi bu shartlarni bajariw ucun concret classnining iciga interfaceda bodysiz yozilgan 
 Methodlarni hammasini toliq tanasi blan yozib ciqiwi kerak boladi. Buni implement qilib yani body qismi bn yoziladigan 
