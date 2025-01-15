@@ -1,0 +1,26 @@
+
+
+
+
+						2nd Repository Pattern
+
+	VS 2022  =>  ASP.NET Core Web API "Server"  =>  (By Solution) Add New Project  =>  Class Library (3x) "Service", 
+"Repository", "DataAccess"  =>  Need to switch all of three part to each other through clicking on right of mouse by 
+dependency => (Server -> Service -> Repository -> DataAccess).  (JSON ucun joylawuv orni > _path = Path.Combine(Directory.GetCurrentDirectory(), "Movies.json");)
+
+
+
+
+
+
+						Lambda Expression "=>"
+
+	Lambda expression bu kicik bir funksiya desak ham boladi, etaylik masalan biz bironbir wartli funksiyani yozmoqci bolsak, 
+shuncaki masalan: (age => age > 18) Bu yerda hozi birincida turgan "age" dagi qismi funksiyaning qabul qiladigan argument qismi 
+desak ham boladi, bundan song esa lambda belgisi qoyiladi va undan song esa funksiyaning qisqa warti yoziladi, masalan biz 
+keltirgan misolda qabul qilinayotgan qism 18 yowdan katta bolsa bizga "true" qiymatini qaytarsin degan wart berilmoqda. Bundan 
+tawqari biz bowqaca wartli funksiyalarni ham yoziwimiz mumkin masalan: (Person => Person.Age) Bu yerda Person degan objectimizning 
+yoshini olib ber degan wartni soravotgan bolamiz. Bundan tawqari biz kaatta funksiyalarni lambda bn bajara olmaymiz, biz faqatgina 
+kicik bolgan funksiyalarimizni lambda orqali bajariwimiz mumkin.
+
+	    

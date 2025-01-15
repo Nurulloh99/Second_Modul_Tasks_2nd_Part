@@ -1,0 +1,179 @@
+
+
+
+
+
+						LINQ
+
+	LINQ lar bu IEnumerable collectionlari un yozilgan extension methodlar hisoblanadi, biz bulani asosan for yoki forech 
+orniga iwlatiwimiz mumkn, Linq methodining icidagi ozgaruvchilarning tipi, linqdan oldin yozilgan listning icidagi obyektlarning 
+tipi bn bir xil boladi. Va bu Listning tipini list qilib qaytaradi.
+
+LINQ larning turlari: 
+
+	Where() - biz buni qaconki linqning icida conditionlarni (<, >, ==) iwlatmoqci bolganimizdagina buni iwlatiwimiz mumkn.
+
+	var res = students.Where(st => st.Age > 18).ToList();
+        var res1 = students.Where(st => st.Cash < 1000).ToList();
+        var res2 = students.Where(st => char.IsUpper(st.FirstName[0])).ToList();
+        var res3 = students.Where(st => char.IsLower(st.FirstName[0])).ToList();
+
+
+
+
+
+
+	Select() - biz buni qaconki Listning icidagi bironbir tipni yigish un iwlatamiz, va bunga where ga oxwab condition ham 
+iwlatsak boladi. Bunda linq listdagi ozgaruvchilarning tipini alohida anniq bir tipdagi ozgaruvchining qiymatini qabul qiladi. 
+(int, string, char). Bu yerda esa (st => st.Age) = studentni yoshini yigib beradi.
+
+	var res4 = students.Select(st => st.FirstName).ToList();
+
+        List<int> ints = new List<int>() { 2, 3, 5, 4, 6, 7, 8, 4, 5, 9, 0 };
+        var res5 = ints.Select(i => i % 2 == 0 ? i * 2 : i).ToList();
+
+
+
+
+
+
+	OrderBy() - biz buni qaconki anniq bir tipdagi ozgaruvcining qiymatlarini sortlamoqchi(tartiblamoqci) bolsak, owanda 
+iwlatiwimiz mumkn. Va biz bunga qanca qaymat kiritsak ham huddi owanca qiymatni qaytaradi, lekin endi tartiblagan holda. Kodda 
+iwlatiw jarayoni Select() ga oxwaydi. (st => st.Age), (st => st.FirstName) bulani hammasi sortlangan holda qaytadi.
+
+	var res6 = students.OrderBy(st => st.Age).ToList();    
+        var res7 = students.OrderBy(st => st.FirstName).ToList(); 
+
+
+
+
+
+
+	OrderByDescending() - Bu endi xuddi OrderBy() ning teskarisi, ya'ni tartiblangan qiymatni teskari holda tartiblagan 
+holda yigib qaytarib beradi.
+
+	var res8 = students.OrderByDescending(st => st.Cash).ToList();
+
+
+
+
+
+
+	Count() - Bu yigilgan listga condition iwlatgan holda qiymatlarning newtaligini qaytaradi. 
+Masalan: Count(st => st.Age > 18) Bu yerda 18 dan katta yowdagilarni newtaligini yigib qaytarib beradi.
+
+	var res9 = students.Count(st => st.Age > 18);
+
+
+
+
+
+
+	Sum() - Bu bizdagi asosan int tipidagi qiymatlarni haaammasini yigindisini qaytaradi. Masalan: Sum(st => st.Cash)
+Bu yerda studentning baarcha pullarini umumiy hisobda necpulligini qaytarmoqda.
+
+	var res10 = students.Where(st => st.Age > 18).Sum(st => st.Cash);
+
+
+
+
+
+
+	Min() - Qiymatlarning eeng kicigini qaytaradi.
+	Max() - Qiymatlarning eeng kattasini qaytaradi.
+
+	var res12 = students.Min(st => st.Age);
+	var res11 = students.Where(stu => stu.Age == students.Min(st => st.Age)).ToList();
+
+
+
+
+
+	Average() - Qiymatlarning orta arifmetigini ciqarib beradi.
+
+	var res13 = students.Average(st =>  st.Age);
+
+
+
+
+
+
+	All() - Bu linq bizga bool qaytaradi, ya'ni agar biz biron bir shart blan condition iwlatadigan bolsak, va shu holat 
+qiymatlarning baarcasiga togri kelsa "true" aks holda "false" qaytaradi.
+
+	var res14 = students.All(st =>  st.Cash > 0);
+        var res15 = students.All(st =>  st.Cash > 150);
+
+
+
+
+
+
+	Any() - Agarki qiymatlarimizni xech bolmaganda bitttasi berilgan conditionimizning shartiga togri kelib qolsa "true" 
+aks holda "false" qaytaradi.
+
+	var res16 = students.Any(st => st.Age > 30);
+        var res17 = students.Any(st => st.Age > 40);
+
+
+
+
+
+
+	First() - Agarki qiymatlarimizga berilgan conditionimizning sharti togri kelsa owa qiymatlarning faqatgina birincisi 
+qaytadi, togri kelmasa EXEPTION otgan holda javob keladi (SOKADI). Pasda berilgan wartimizda 25 yowdan kicik bolgan studentlarning 
+birincisini qaytariwi soralmoqda.
+
+	var res18 = students.First(st => st.Age < 25);
+
+
+
+
+
+
+	
+	FirstOrDefault() - Agarki qiymatlarimizga berilgan conditionimizning sharti togri kelsa owa qiymatlarning faqatgina birincisi 
+qaytadi, togri kelmasa shuncaki NULL qaytadi. Pasda berilgan wartimizda 10 yowdan kicik bolgan studentlarning birincisini qaytariwi 
+soralmoqda. mavjud bolsa owa studentlarning faqatgina birinchisi qaytadi, aks holda NULL ya'ni xec nima korinmagan holda qora oyna 
+turaveradi.
+
+	var res19 = students.FirstOrDefault(st => st.Age < 10);
+
+
+
+
+
+
+
+
+	Single() - Agarki qiymatlarimizga berilgan conditionimizning sharti togri kelsa owa qiymatning ozini qaytaradi, ya'ni yagonalikka 
+tekwiradi desak ham boladi, bu malum bir qiymatning (unique) ligini tekwiriw un iwlatilinadi va owa qiymat yagona va bitta ozi yolgiz bolsa 
+wu qiymatning ozi qaytadi. Xec qanday (true & false) qaytmaydi. Agarki berilgan conditionga togri kelmasa EXEPTION otib (SOKADI).
+
+	var res20 = students.Single(st => st.Age < 17);
+
+
+
+
+
+
+
+	SingleOrDefault() - Agarki qiymatlarimizga berilgan conditionimizning sharti togri kelsa owa qiymatning ozini qaytaradi, ya'ni 
+yagonalikka tekwiradi desak ham boladi, bu malum bir qiymatning (unique) ligini tekwiriw un iwlatilinadi va owa qiymat yagona va bitta ozi 
+yolgiz bolsa wu qiymatning ozi qaytadi. Xec qanday (true & false) qaytmaydi. Agarki berilgan conditionga togri kelmasa u holda NULL ya'ni 
+xec nima korinmagan holda qora oyna turaveradi.
+
+	var res21 = students.SingleOrDefault(st => Is21(st.Age));
+
+
+
+
+
+
+
+	ThenBy() - Bu qaysidir bir LINQ ni iwlatganimizdan song davomiga qandaydir qiymatlarni ciqarmoqci bolganimizda iwlatiwimiz mumkin.
+
+	var res22 = students.OrderBy(st => st.Age).ThenBy(stu => stu.FirstName).ToList();
+
+	
+

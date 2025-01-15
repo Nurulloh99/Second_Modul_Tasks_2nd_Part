@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="DataAccess\Data\" />
+    <Folder Include="DataAccess\Data\" />
   </ItemGroup>
 
 </Project>

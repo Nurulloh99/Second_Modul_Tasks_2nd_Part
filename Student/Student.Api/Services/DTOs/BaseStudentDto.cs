@@ -8,6 +8,6 @@ public class BaseStudentDto
     public string SecondName { get; set; }
     public int Age { get; set; }
     public string Email { get; set; }
-    public Degree StudentDegree { get; set; }
-    public Gender StudentGender { get; set; }
+    public Degree StatusDegree { get; set; }
+    public Gender StatusGender { get; set; }
 }

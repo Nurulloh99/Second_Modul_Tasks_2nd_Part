@@ -1,0 +1,6 @@
+@Boook.Server_HostAddress = http://localhost:5098
+
+GET {{Boook.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

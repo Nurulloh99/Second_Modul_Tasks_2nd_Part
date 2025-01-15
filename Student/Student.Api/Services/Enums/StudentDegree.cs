@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Student.Api.Services.Enums;
 
-namespace Student.Api.Services.Enums
+public enum StudentDegree
 {
-    public enum StudentDegree
-    {
-        Bachalor,
-        Master,
-        PHD,
-    }
+    Bachalor,
+    Master,
+    PHD
 }

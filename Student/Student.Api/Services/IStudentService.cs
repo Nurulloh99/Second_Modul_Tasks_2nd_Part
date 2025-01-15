@@ -5,11 +5,11 @@ namespace Student.Api.Services;
 
 public interface IStudentService
 {
-    StudentGetDto AddStudent(StudentCreateDto studentDto);
-    StudentGetDto GetStudentById(Guid studentDto);
+    StudentGetDto AddStudent(StudentCreateDto student);
+    StudentGetDto GetStudentById(Guid studentId);
     List<StudentGetDto> GetAllStudents();
-    void DeleteStudent(Guid deletingStudent);
-    void UpdateStudent(StudentUpdateDto studentDto);
-    object GetStudentByDegree(StudentDegree degree);
-    object GetStudentByGender(StudentGender gender);
+    void DeleteStudent(Guid studentId);
+    void UpdateStudent(StudentUpdateDto student);
+    object ReadAllStudentsByDegree(StudentDegree studentDegree);
+    object ReadAllStudentsByGender(StudentGender studentGender);
 }

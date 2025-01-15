@@ -1,0 +1,87 @@
+
+
+
+
+					NULABLE OPERATORS "?" / "??" / "??="
+
+	Biz odatda value tipdagi ozgaruvchilarga null larni yuklay olmaymiz, ya'ni bizdagi value type ozgaruvchilarimiz
+nulable emaaas, shuning hisobiga ularni biz "?" soroq belgisini qoyiw bilan ularni nulable qilib qoya olamiz. Misol uchun:
+(int a = null;) bu holatda bizning kodimiz hato korsatadi, lekin agar biz buni quidagi koriniwda yozadigan bolsak, bunday holda 
+bular nulable bolib qoladi: (int? a = null;).
+	Bundan tawqari bizda yuqorida korsatilgan int ni orniga bowqa tipdagi ozgaruvchi keladi, lekin bu ozgaruvchini int ga oxwab
+majburan nulable qila olmaymiz. Wuning hisobiga biz endi quidagi korinishdagi kodni yoziwimiz kerak boladi: Misol uchun:
+ (int b = num ?? 0;) BU yerda yani agar bizdagi "num" qiymatimiz nulable bolibqolsa mana shu ikkita soroq belgisidan keyingi qiymatni
+olgin, degan buyruq berilmoqda. BUndan tawqari agar biz quidagi korinishdagi amalli bajaradigan bolsak, yani:
+ 
+	int? intValue = null;
+	int res = intValue ??= 10;
+
+Bu yerda birincidagi int dan song "?" belgisini qoyiwimiz int tipidagi ozgaruvchimizning qiymatini nulable qilmoqdamiz va unga 
+atayin null yuklamoqdamiz, tegidagi kodda esa int tipidagi "res" ga null tipini oz iciga olgan qiymatni yuklab, agarki "intValue" 
+ozgaruvchisi nulable bolibqolsa "res" ga "??=" dan keyingi qiymatni va huddi shu payta "intValue" ga ham huddi shu "??=" belgisidan 
+keyingi qiymatni bunga ham yuklab ketgin degan manoda iwlatilmoqda. Ya'ni bu yerda endi "res" ga ham "intValue" ga ham 10 qiymati 
+yuklanib qoldi.
+
+
+
+
+
+					TERNARY OPERATORI
+
+	Agar biz yuqorida korsatilingan holatdagi numberimiz nulable bolibqolsa u holda aynaqa yuqoridagidek 0 raqamini emas balki 
+bowqa wart bermoqci o'lsak biz endi ternary operatori bilan yoziwimiz kerak boladi, Buning korinishi esa quidagicha:
+
+	int take = 15;
+
+	take = take <= 0 || take > 100 ? 100 : take;
+
+	BU yerda holatimizda biriiiinchi take dan keyingi "=" belgisidan song "?" belgisigacha huddiki if ning warti yozilvotti,
+agar wu wart baarilsa soroq "?" belgisi qoyilib soroqdan keyin wu qiymat yuklansin, yoki wu wart bajarilsin. Aks holda esa ":" 
+belgisidan song wu qiymat yuklansin, yoki wu wart bajarilsin degan wart bajariladi. 
+
+
+
+
+
+
+
+					"HashSet" COLLECTIONI
+
+	HashSet - bu collectionlarning bir turi hisoblanadi, va u ham ozida bitta tipdagi ozgaruvchilarning qiymatini ozida 
+saqlab turadigan toplamdir. Bundan tawqari bu "GENERIC" hisoblanadi, yani qandaydir tipga ega bolgan ozgaruvchilari kiritilsa 
+bu collection generic bolganligi sababli u owa tipga moslawgan holda qaytadan kodlarni yozib chiqib iwlay bowlaydi. Bu collection 
+bowqa collectionlardan asosiy farqi bu ozida "UNIQUE" qiymatlarni yigib turadi, yani takrorlangan qiymatlarni qowmaydi.
+
+
+
+
+
+					"SortedSet" COLLECTIONI
+
+	SortedSet - bu collectionlarning bir turi hisoblanadi, bu ham ozida malum bir tipdagi ozgaruvchining qiymatini ozida 
+saqlab turadi va bu ham "GENERIC" hisoblanadi. Bu ham huddi "HashSet" collectionidek iwlaydi, ya'ni ozida qiymatlarni yuklaganda 
+u ham ozida unique holatda yani takrorlangan qiymatlarning faqatgina bittasini qabul qilgan holda saqlaydi. Lekin bu ozida barcha 
+qiymatlarni SORT lagan holda saqlaydi.
+
+
+
+
+					
+					"LinkedList" COLLECTIONI
+
+	LinkedList - bu ham collectionlarning bir turi hisoblanadi, lekin buning bowqa collectionlaridan asosiy farqi, buning 
+qiymatlarining xotiradan joylashgan holati juda ham aqilli oylangan, yani bu agar biron bir qiymatni ozida saqlaganda bu owa 
+qiymatdan bitta oldini va bitta keyingi qiymatlarini joylawgan addresini ham ozida saqlab ketadi.
+
+
+
+
+
+
+					"SortedList" COLLECTIONI
+
+	SortedList - bu ham collectionlarning bir turi hisoblanadi, bowqa collectionlardan asosiy farqi bu "Dictionary" 
+collectioniga oxwab iwlaydi, yani ozida ikkita argument qabul qiladi va "key" qismidagi qiymatga qarab ("key" qismini) 
+sortlagan holda saqlaydi.
+
+		

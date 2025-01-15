@@ -1,5 +1,5 @@
-﻿using Student.Api.DataAccess.Entities;
-using Student.Api.Repositories;
+﻿using Student.Api.DataAccess.Entity;
+using Student.Api.Repository;
 using Student.Api.Services.DTOs;
 using Student.Api.Services.Enums;
 
@@ -7,32 +7,31 @@ namespace Student.Api.Services;
 
 public class StudentService : IStudentService
 {
-    public IStudentRepository studentRepo;
+    public IStudentRepository _studentRepo;
 
     public StudentService()
     {
-        studentRepo = new StudentRepository();
+        _studentRepo = new StudentRepository();
     }
 
-
-    public StudentGetDto AddStudent(StudentCreateDto studentDto)
+    public StudentGetDto AddStudent(StudentCreateDto student)
     {
-        ValidateStudentCreateDto(studentDto);
-        var newStudent = ConvertStudent(studentDto);
+        ValidateStudentCreateDto(student);
+        var newStudent = ConvertStudent(student);
         newStudent.Id = Guid.NewGuid();
-        studentRepo.EmailConsists(newStudent.Email);
-        studentRepo.WriteStudent(newStudent);
+        _studentRepo.EmailContains(newStudent.Email);
+        _studentRepo.WriteStudent(newStudent);
         return ConvertStudent(newStudent);
     }
 
-    public void DeleteStudent(Guid deletingStudent)
+    public void DeleteStudent(Guid studentId)
     {
-        studentRepo.RemoveStudent(deletingStudent);
+        _studentRepo.RemoveStudent(studentId);
     }
 
     public List<StudentGetDto> GetAllStudents()
     {
-        var getAllStudents = studentRepo.ReadAllStudents();
+        var getAllStudents = _studentRepo.ReadAllStudents();
         var allStudents = new List<StudentGetDto>();
 
         foreach (var student in getAllStudents)
@@ -43,14 +42,20 @@ public class StudentService : IStudentService
         return allStudents;
     }
 
-    public object GetStudentByDegree(StudentDegree degree)
+    public StudentGetDto GetStudentById(Guid studentId)
     {
-        var getAllStudents = studentRepo.ReadAllStudents();
+        var studentById = _studentRepo.ReadStudentById(studentId);
+        return ConvertStudent(studentById);
+    }
+
+    public object ReadAllStudentsByDegree(StudentDegree studentDegree)
+    {
+        var getAllStudents = _studentRepo.ReadAllStudents();
         var allStudents = new List<StudentGetDto>();
 
-        foreach (var student in getAllStudents)
+        foreach(var student in getAllStudents)
         {
-            if ((StudentDegree)student.StudentDegree == degree)
+            if (object.Equals(student.StatusDegree, studentDegree))
             {
                 allStudents.Add(ConvertStudent(student));
             }
@@ -59,14 +64,14 @@ public class StudentService : IStudentService
         return allStudents;
     }
 
-    public object GetStudentByGender(StudentGender gender)
+    public object ReadAllStudentsByGender(StudentGender studentGender)
     {
-        var getAllStudents = studentRepo.ReadAllStudents();
+        var getAllStudents = _studentRepo.ReadAllStudents();
         var allStudents = new List<StudentGetDto>();
 
         foreach (var student in getAllStudents)
         {
-            if ((StudentGender)student.StudentGender == gender)
+            if(object.Equals(student.StatusGender, studentGender))
             {
                 allStudents.Add(ConvertStudent(student));
             }
@@ -75,17 +80,10 @@ public class StudentService : IStudentService
         return allStudents;
     }
 
-    public StudentGetDto GetStudentById(Guid studentDto)
+    public void UpdateStudent(StudentUpdateDto student)
     {
-        var newStudent = studentRepo.ReadStudentById(studentDto);
-        return ConvertStudent(newStudent);
+        _studentRepo.UpdateStudent(ConvertStudent(student));
     }
-
-    public void UpdateStudent(StudentUpdateDto studentDto)
-    {
-        studentRepo.UpdateStudent(ConvertStudent(studentDto));
-    }
-
 
     private Students ConvertStudent(StudentCreateDto student)
     {
@@ -96,22 +94,8 @@ public class StudentService : IStudentService
             Age = student.Age,
             Email = student.Email,
             Password = student.Password,
-            StudentDegree = student.StudentDegree,
-            StudentGender = student.StudentGender,
-        };
-    }
-
-    private StudentGetDto ConvertStudent(Students student)
-    {
-        return new StudentGetDto
-        {
-            Id = student.Id,
-            FirstName = student.FirstName,
-            SecondName = student.SecondName,
-            Age = student.Age,
-            Email = student.Email,
-            StudentDegree = student.StudentDegree,
-            StudentGender = student.StudentGender,
+            StatusGender = student.StatusGender,
+            StatusDegree = student.StatusDegree,
         };
     }
 
@@ -125,35 +109,48 @@ public class StudentService : IStudentService
             Age = student.Age,
             Email = student.Email,
             Password = student.Password,
-            StudentDegree = student.StudentDegree,
-            StudentGender = student.StudentGender,
+            StatusGender = student.StatusGender,
+            StatusDegree = student.StatusDegree,
         };
     }
 
-
-    private void ValidateStudentCreateDto(StudentCreateDto studentDto)
+    private StudentGetDto ConvertStudent(Students student)
     {
-        if (string.IsNullOrWhiteSpace(studentDto.FirstName) || studentDto.FirstName.Length > 50)
+        return new StudentGetDto
+        {
+            Id= student.Id,
+            FirstName = student.FirstName,
+            SecondName = student.SecondName,
+            Age = student.Age,
+            Email = student.Email,
+            StatusDegree = student.StatusDegree,
+            StatusGender = student.StatusGender,
+        };
+    }
+
+    private void ValidateStudentCreateDto(StudentCreateDto student)
+    {
+        if (string.IsNullOrWhiteSpace(student.FirstName) || student.FirstName.Length > 50)
+        {
+            throw new Exception("Error occured!");
+        }
+
+        if (string.IsNullOrWhiteSpace(student.SecondName) || student.SecondName.Length > 50)
+        {
+            throw new Exception("Error occured!");
+        }
+
+        if (student.Age < 15 || student.Age > 150)
+        {
+            throw new Exception("Error occured!!!");
+        }
+
+        if (!student.Email.EndsWith("@gmail.com") || student.Email.Length < 10)
         {
             throw new Exception("Error");
         }
 
-        if (string.IsNullOrWhiteSpace(studentDto.SecondName) || studentDto.SecondName.Length > 50)
-        {
-            throw new Exception("Error");
-        }
-
-        if (studentDto.Age < 15 || studentDto.Age > 150)
-        {
-            throw new Exception("Error");
-        }
-
-        if (!studentDto.Email.EndsWith("@gmail.com") || studentDto.Email.Length < 10)
-        {
-            throw new Exception("Error");
-        }
-
-        if (studentDto.Password.StartsWith("(") && studentDto.Password.EndsWith(")") || studentDto.Password.Length < 8)
+        if (student.Password.Length < 8 || string.IsNullOrEmpty(student.Password))
         {
             throw new Exception("Error");
         }
